@@ -2,7 +2,8 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="SimplePractice">
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="SimplePractice">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="C:/Tools/eclipse_FTM"/>
     <property name="debuglevel" value="source,lines,vars"/>
@@ -57,4 +58,21 @@
             <classpath refid="SimplePractice.classpath"/>
         </java>
     </target>
+    <target name="ReverseTest">
+        <java classname="io.jimmyliao.practice.ReverseTest" failonerror="true" fork="yes">
+            <arg value="${arg0}"/>            
+            <classpath refid="SimplePractice.classpath"/>
+        </java>
+    </target>
+    <target name="LinkNode">
+        <java classname="io.jimmyliao.practice.LinkNode" failonerror="true" fork="yes">
+            <classpath refid="SimplePractice.classpath"/>
+        </java>
+    </target>
+    <target name="LinkedList">
+        <java classname="io.jimmyliao.practice.LinkedList" failonerror="true" fork="yes">
+            <classpath refid="SimplePractice.classpath"/>
+        </java>
+    </target>
+
 </project>
